@@ -1,8 +1,8 @@
 <?php
 	$mysql_hostname = "localhost";
-	$mysql_user = "worldof9";
-	$mysql_password = "zuI41s87nU";
-	$mysql_database = "worldof9_users";
+	$mysql_user = "adminKC2zbWu";
+	$mysql_password = "JAvyn-Xa3KM-";
+	$mysql_database = "belot";
 	$prefix = "";
 
 	//Spajanje na bazu
