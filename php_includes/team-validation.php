@@ -1,5 +1,5 @@
 <?php
-	$mysql_hostname = OPENSHIFT_MYSQL_DB_HOST;
+	$mysql_hostname = "127.8.30.130:3306";
 	$mysql_user = "adminKC2zbWu";
 	$mysql_password = "JAvyn-Xa3KM-";
 	$mysql_database = "belot";
