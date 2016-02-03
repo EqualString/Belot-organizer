@@ -1,21 +1,5 @@
 <?php
-	/*$mysql_hostname = getenv('OPENSHIFT_MYSQL_DB_HOST');
-	$mysql_user = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-	$mysql_password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-	$mysql_database = "belot";
-	$prefix = "";
-
-	//Spajanje na bazu
-	$bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
-	mysql_select_db($mysql_database, $bd) or die("Could not select database");*/
-	
-	$link = mysql_connect('sql2.freemysqlhosting.net', 'sql2105451', 'rH8!sN2!');
-	if (!$link) {
-		die('Could not connect: ' . mysql_error());
-	}
-	echo 'Connected successfully';
-
-	mysql_select_db('sql2105451',$link) or die ("could not open db".mysql_error());
+	include "php_includes/db-conx.php";
 	
 	if(isset($_POST["teamnamecheck"])){
 		$teamname = $_POST["teamnamecheck"];
