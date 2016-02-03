@@ -6,12 +6,12 @@
 		$sql="SELECT * FROM `Teams` WHERE teamName='$teamname' LIMIT 1";
 		$result = mysqli_query($db_conx, $sql);
 		$count = mysqli_num_rows($result);
-		if ($count == 1){ 
-			echo "1";
+		if ($count < 1){ 
+			echo "0";
 			exit();
 		}
 		else {
-			echo "0";
+			echo "1";
 			exit();
 		}
 	}
