@@ -9,14 +9,19 @@
 	$bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
 	mysql_select_db($mysql_database, $bd) or die("Could not select database");*/
 	
-	$link = mysql_connect('sql2.freemysqlhosting.net', 'sql2105451', 'rH8!sN2!');
-	if (!$link) {
-		die('Could not connect: ' . mysql_error());
-	}
-	echo 'Connected successfully';
+	$servername = "sql2.freemysqlhosting.net";
+	$username = "sql2105451";
+	$password = "rH8!sN2!";
 
-	mysql_select_db('sql2105451',$link) or die ("could not open db".mysql_error());
-	
+	// Create connection
+	$conn = new mysqli($servername, $username, $password);
+
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+	echo "Connected successfully";
+
 	session_start();
 	
 	//Test sesije
