@@ -1,5 +1,5 @@
 <?php
-	$mysql_hostname = getenv('OPENSHIFT_MYSQL_DB_HOST');
+	/*$mysql_hostname = getenv('OPENSHIFT_MYSQL_DB_HOST');
 	$mysql_user = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
 	$mysql_password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 	$mysql_database = "belot";
@@ -7,7 +7,7 @@
 
 	//Spajanje na bazu
 	$bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Nemere");
-	mysql_select_db($mysql_database, $bd) or die("Could not select database");
+	mysql_select_db($mysql_database, $bd) or die("Could not select database");*/
 	
 	session_start();
 	
