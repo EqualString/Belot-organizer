@@ -398,7 +398,7 @@
     <script src="js/owl-carousel.js"></script>
 	<script src="js/ajax.js"></script>
 	<script src="js/mandrill.js"></script>
-	<script src="http://l2.io/ip.js?var=myip"></script>
+	<script type="text/javascript" src="https://www.l2.io/ip.js?var=myip"></script>
 	<script src="js/imagesloaded.pkgd.min.js"></script>
 	<script src="js/passwd-strenght.js"></script>
     <script src="js/main.js"></script>
