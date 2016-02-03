@@ -232,6 +232,7 @@ $("#cls-loging-comp").click( function(){
 $("#cls-team-add-succes").click( function(){ 
 	$('#global, #team-add-succes').fadeOut(550);
 	$('body').removeClass('stop-scrolling');
+	//Gašenjem prozora se stranica refresha
 	location.reload();
 });
 

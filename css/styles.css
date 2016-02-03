@@ -202,7 +202,7 @@ big,
 	margin-bottom:40px;
 }
 #team-add-succes{
-	width: 630px;
+	width: auto;
 	height: auto;
 	border-top: 4.5px solid #E06060;
 	opacity:1;
@@ -225,6 +225,7 @@ big,
 #team-add-succes h4 {
 	margin-top: 20px;
 	margin-left: 30px;
+	margin-right: 30px;
 	margin-bottom: 35px;
 }
 #cls-team-add-succes{

@@ -1,4 +1,5 @@
 <?php
+	//Validacija nove ekipe
 	include_once("db-conx.php");
 	
 	if(isset($_POST["teamnamecheck"])){

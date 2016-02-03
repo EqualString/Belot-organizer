@@ -1,4 +1,6 @@
 <?php
+	//Koristi se remote baza podataka
+	//Database as a Service (DBaaS)
 	$servername = "sql2.freemysqlhosting.net";
 	$username = "sql2105451";
 	$password = "rH8!sN2!";

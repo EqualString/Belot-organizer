@@ -1,4 +1,5 @@
 <?php
+	//Registracija nove ekipe
 	include_once("db-conx.php");
 	
 	if(isset($_POST["teamregister"])){
@@ -10,6 +11,8 @@
 	    $tbm = $_POST["tbm"];
 	    $ts1 = $_POST["ts1"];
 		$activated = "0";
+		//Activated se aktivira s mail-a
+		//teamID je auto increment u phpMyAdmin-u
 		$sql="INSERT INTO `Teams` (teamName, email, passwd, username, brojMob, igrac1, igrac2, activated) VALUES ('$tmn', '$tme', '$ts1','$tmu', '$tbm', '$tn1', '$tn2', '$activated')";
 		if (mysqli_query($db_conx, $sql)){
 			echo "1";	
