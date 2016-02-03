@@ -3,14 +3,12 @@
 	$servername = "sql2.freemysqlhosting.net";
 	$username = "sql2105451";
 	$password = "rH8!sN2!";
+	$db_conx = mysqli_connect( $servername, $username, $password, $username);
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password);
-
-	// Check connection
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	}
+if (mysqli_connect_errno()){
+	echo mysqli_connect_error();
+	exit();
+}
 	
 	session_start();
 	
