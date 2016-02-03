@@ -11,7 +11,7 @@
 	    $ts1 = $_POST["ts1"];
 		$activated = 0;
 		$sql="INSERT INTO `Teams` (username, teamName, email, igrac1, igrac2, brojMob, passwd, activated) VALUES ('$tmu', '$tmn', '$tme','$tn1', '$tn2', '$tbm', '$ts1', '$activated')";
-		if (mysql_query($sql)){
+		if (mysqli_query($sql)){
 			echo "1";	
 			exit();
 		} else{
