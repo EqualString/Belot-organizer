@@ -185,15 +185,7 @@ $("#reg-team").click( function(){
 					$('#team-add-succes-mail').html(tme);
 					$('#global, #team-add-succes').fadeIn(550).css("display","block");
 					$('body').addClass('stop-scrolling');
-					//Očisti inpute
-					$('#team-name1').val();
-					$('#team-name2').val();
-					$('#team-name').val();
-					$('#team-broj-mob').val();
-					$('#team-email').val();
-					$('#team-username').val();
-					$('#team-passwd1').val();
-					$('#team-passwd2').val();
+					location.reload();
 				}
 				if(ajax.responseText == "2"){
 					alert("Neuspješna registracija");
