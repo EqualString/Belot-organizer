@@ -6,7 +6,7 @@
 	$prefix = "";
 
 	//Spajanje na bazu
-	$bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
+	$bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Nemere");
 	mysql_select_db($mysql_database, $bd) or die("Could not select database");
 	
 	if(isset($_POST["teamregister"])){
