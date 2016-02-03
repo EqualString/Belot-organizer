@@ -1,5 +1,5 @@
 <?php
-	include "php_includes/db-conx.php";
+	include ("php_includes/db-conx.php");
 	
 	if(isset($_POST["teamregister"])){
 		$tmu = $_POST["teamregister"];
