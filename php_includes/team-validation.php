@@ -1,5 +1,5 @@
 <?php
-	include_once("php_includes/db-conx.php");
+	include_once("db-conx.php");
 	
 	if(isset($_POST["teamnamecheck"])){
 		$teamname = $_POST["teamnamecheck"];
