@@ -1,7 +1,7 @@
 <?php
-	$mysql_hostname = "127.8.30.130:3306";
-	$mysql_user = "adminKC2zbWu";
-	$mysql_password = "JAvyn-Xa3KM-";
+	$mysql_hostname = getenv('OPENSHIFT_MYSQL_DB_HOST');
+	$mysql_user = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+	$mysql_password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 	$mysql_database = "belot";
 	$prefix = "";
 
