@@ -185,7 +185,6 @@ $("#reg-team").click( function(){
 					$('#team-add-succes-mail').html(tme);
 					$('#global, #team-add-succes').fadeIn(550).css("display","block");
 					$('body').addClass('stop-scrolling');
-					location.reload();
 				}
 				if(ajax.responseText == "2"){
 					alert("Neuspješna registracija");
@@ -233,6 +232,7 @@ $("#cls-loging-comp").click( function(){
 $("#cls-team-add-succes").click( function(){ 
 	$('#global, #team-add-succes').fadeOut(550);
 	$('body').removeClass('stop-scrolling');
+	location.reload();
 });
 
 $("#show-org-succes").click( function(){ 
