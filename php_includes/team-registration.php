@@ -9,8 +9,8 @@
 	    $tmn = $_POST["tmn"];
 	    $tbm = $_POST["tbm"];
 	    $ts1 = $_POST["ts1"];
-		$activated = 0;
-		$sql="INSERT INTO `Teams` (username, teamName, email, igrac1, igrac2, brojMob, passwd, activated) VALUES ('$tmu', '$tmn', '$tme','$tn1', '$tn2', '$tbm', '$ts1', '$activated')";
+		$activated = FALSE;
+		$sql="INSERT INTO `Teams` (teamName, email, passwd, username, brojMob, igrac1, igrac2, activated) VALUES ('$tmn', '$tme', '$ts1','$tmu', '$tbm', '$tn1', '$tn2', '$activated')";
 		if (mysqli_query($sql)){
 			echo "1";	
 			exit();
