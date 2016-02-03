@@ -1,13 +1,4 @@
 <?php
-	/*$mysql_hostname = getenv('OPENSHIFT_MYSQL_DB_HOST');
-	$mysql_user = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-	$mysql_password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-	$mysql_database = "belot";
-	$prefix = "";
-
-	//Spajanje na bazu
-	$bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
-	mysql_select_db($mysql_database, $bd) or die("Could not select database");*/
 	
 	$servername = "sql2.freemysqlhosting.net";
 	$username = "sql2105451";
@@ -20,8 +11,7 @@
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	}
-	echo "Connected successfully";
-
+	
 	session_start();
 	
 	//Test sesije
