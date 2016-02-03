@@ -42,7 +42,7 @@ function checkteamname() {
 		err = true;
 	}
 	else if ( tmn != "") {
-		var ajax = ajaxObj("POST", "php_includes/team-validation.php");
+		var ajax = ajaxObj("POST", "php_includes/team-validation2.php");
 		//Primanje od strane php-a
 		ajax.onreadystatechange = function() {
 	        if(ajaxReturn(ajax) == true) {
