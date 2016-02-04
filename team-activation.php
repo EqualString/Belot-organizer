@@ -98,15 +98,6 @@
 	<?php
 		//Ako je captcha poslala response, Google ga verificira
 		if ($_POST["g-recaptcha-response"]) {
-		
-			$response = $reCaptcha->verifyResponse(
-				$_SERVER["REMOTE_ADDR"],
-				$_POST["g-recaptcha-response"]
-			);
-			
-		}
-		//Ako postoji odgovor i success je 
-		if ($resp != null && $resp->success) {
 			
 			//Aktivacija računa
 			$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
@@ -114,8 +105,20 @@
 			
 			//Stvaranje sessije
 			$_SESSION['sudionik'] = $u; 
-			//header("location: index");
+			header("location: index");
+		
+		
+			/*$response = $reCaptcha->verifyResponse(
+				$_SERVER["REMOTE_ADDR"],
+				$_POST["g-recaptcha-response"]
+			);*/
+			
 		}
+		//Ako postoji odgovor i success je 
+		/*if ($resp != null && $resp->success) {
+			
+			
+		}*/
 	?>
 </body>
 </html><?php	
