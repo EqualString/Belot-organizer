@@ -16,7 +16,7 @@
 	$router->setBasePath('');
 
 	$router->map('GET','/', 'index.php', 'home');
-	$router->map('GET','/home/', 'index.php', 'home-home');
+	$router->map('GET','/home/', 'router.php', 'home-home');
 ?>
 <!DOCTYPE HTML>
 <html>
