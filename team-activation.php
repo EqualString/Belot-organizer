@@ -96,6 +96,8 @@
 		});
 		var g = grecaptcha.getResponse();
 		if(g.length == 0){
+			alert("nemore");
+		}else {
 			alert("more");
 		}
 	</script>
