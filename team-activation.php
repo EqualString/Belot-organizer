@@ -10,7 +10,7 @@
 		$count = mysqli_num_rows($result);
 		
 		//Postoji zapis, Aktiviraj account
-		if ($count != 1){ 
+		if ($count == 1){ 
 			/*$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
 			$query = mysqli_query($db_conx, $sql);*/
 ?>
