@@ -5,7 +5,7 @@
 	if (isset($_GET['user'])) {
 		
 		include_once("php_includes/db-conx.php");
-		require "php_includes/recaptchalib.php";
+		//require "php_includes/recaptchalib.php";
 
 		$u = $_GET['user'];
 		
@@ -15,12 +15,7 @@
 		
 		//Postoji zapis, Prikaži Web sa reCaptch-om
 		if ($count == 1){ 
-			
-			//ReCaptcha
-			$secret = "6LetbBcTAAAAAErncFuDv2DGcFAcRTIorbdXgJoQ";
-			$response = null;
-			$reCaptcha = new ReCaptcha($secret);
-			
+		
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -97,8 +92,8 @@
 	</script>
 	<?php
 		//Ako je captcha poslala response, Google ga verificira
-		if ($_POST["g-recaptcha-response"]) {
-			
+		if (isset($_POST["g-recaptcha-response"])) {
+			echo "wut?";
 			//Aktivacija računa
 			$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
 			$query = mysqli_query($db_conx, $sql);
@@ -106,19 +101,7 @@
 			//Stvaranje sessije
 			$_SESSION['sudionik'] = $u; 
 			header("location: index");
-		
-		
-			/*$response = $reCaptcha->verifyResponse(
-				$_SERVER["REMOTE_ADDR"],
-				$_POST["g-recaptcha-response"]
-			);*/
-			
 		}
-		//Ako postoji odgovor i success je 
-		/*if ($resp != null && $resp->success) {
-			
-			
-		}*/
 	?>
 </body>
 </html><?php	
