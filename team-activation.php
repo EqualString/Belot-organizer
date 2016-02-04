@@ -1,6 +1,17 @@
 <?php
 	session_start();
 	
+	if(isset($_POST["activate"])){
+			
+			//Aktivacija računa
+			$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
+			$query = mysqli_query($db_conx, $sql);
+			
+			//Stvaranje sessije
+			$_SESSION['sudionik'] = $u; 
+			header("location: index");
+	}
+		
 	//Dohvaća string username iz 'GET', ako postoji, aktivira account
 	if (isset($_GET['user'])) {
 		
@@ -102,19 +113,6 @@
 			}, 2500);	
 		};
 	</script>
-	<?php
-		
-		if(isset($_POST["activate"])){
-			
-			//Aktivacija računa
-			$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
-			$query = mysqli_query($db_conx, $sql);
-			
-			//Stvaranje sessije
-			$_SESSION['sudionik'] = $u; 
-			header("location: index");
-		}
-	?>
 </body>
 </html><?php	
 		}
