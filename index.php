@@ -1,5 +1,7 @@
 <?php
 	include_once("php_includes/db-conx.php");
+	require 'php_includes/AltoRouter.php';
+	
 	session_start();
 	
 	//Test sesije
@@ -9,6 +11,18 @@
 	if(isset($_SESSION['sudionik'])){
 		header("location: participant.php");
 	}
+	
+	$router = new AltoRouter();
+
+	// map homepage
+	$router->map( 'GET', '/', function() {
+		require __DIR__ . '/index.php';
+	});
+	
+	// map homepage
+	$router->map( 'GET', '/index', function() {
+		require __DIR__ . '/index.php';
+	});
 	
 ?>
 <!DOCTYPE HTML>
