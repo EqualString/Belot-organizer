@@ -114,7 +114,7 @@
 			
 			//Stvaranje sessije
 			$_SESSION['sudionik'] = $u; 
-			header("location: index");
+			//header("location: index");
 		}
 	?>
 </body>
