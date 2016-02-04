@@ -3,6 +3,7 @@
 	
 	if(isset($_POST["activate"])){
 			
+			include_once("php_includes/db-conx.php");
 			//Aktivacija računa
 			$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
 			$query = mysqli_query($db_conx, $sql);
@@ -16,8 +17,6 @@
 	if (isset($_GET['user'])) {
 		
 		include_once("php_includes/db-conx.php");
-		require "php_includes/recaptchalib.php";
-
 		$u = $_GET['user'];
 		
 		$sql="SELECT * FROM `Teams` WHERE username='$u' and activated='0' LIMIT 1";
