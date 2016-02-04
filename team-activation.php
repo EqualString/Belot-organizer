@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-	include("php_includes/db-conx.php");
+	include_once("php_includes/db-conx.php");
 	
 	if(isset($_POST["activate"])){
 			
@@ -26,12 +26,6 @@
 		
 		//Postoji zapis, Prikaži Web sa reCaptch-om
 		if ($count == 1){ 
-			
-			//ReCaptcha
-			$secret = "6LetbBcTAAAAAErncFuDv2DGcFAcRTIorbdXgJoQ";
-			$response = null;
-			$reCaptcha = new ReCaptcha($secret);
-			
 ?>
 <!DOCTYPE HTML>
 <html>
