@@ -9,8 +9,8 @@
 			$query = mysqli_query($db_conx, $sql);
 			
 			//Stvaranje sessije
-			$_SESSION['sudionik'] = $u; 
-			header("location: index");
+			/*$_SESSION['sudionik'] = $u; 
+			header("location: index");*/
 	}
 		
 	//Dohvaća string username iz 'GET', ako postoji, aktivira account
