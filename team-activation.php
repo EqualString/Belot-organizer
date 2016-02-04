@@ -5,7 +5,7 @@
 	if (isset($_GET['user'])) {
 		
 		include_once("php_includes/db-conx.php");
-		include_once("php_includes/recaptchalib.php");
+		require "php_includes/recaptchalib.php";
 
 		$u = $_GET['user'];
 		
@@ -109,7 +109,7 @@
 		if ($resp != null && $resp->success) {
 			
 			//Aktivacija računa
-			sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
+			$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
 			$query = mysqli_query($db_conx, $sql);
 			
 			//Stvaranje sessije
