@@ -84,6 +84,7 @@
 		</div>
 	</div>	
 	<script src="js/jquery.js"></script>
+	<script src="js/ajax.js"></script>
 	<script src="js/imagesloaded.pkgd.min.js"></script>
 	<script>
 		//Loader
@@ -95,7 +96,7 @@
 			});
 		});
 		var verifyCallback = function( response ) {
-			console.log( 'g-recaptcha-response: ' + response );
+			alert("uspješno");
 		};
 	</script>
 	<?php
