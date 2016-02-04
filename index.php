@@ -1,6 +1,6 @@
 <?php	
 	//Router
-	require "php_includes/AltoRouter.php";
+	require "AltoRouter.php";
 	$router = new AltoRouter();
 	
 	$router->map( 'GET', '/', function() {
