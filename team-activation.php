@@ -95,7 +95,7 @@
 			});
 		});
 		var g = grecaptcha.getResponse();
-		if(response.length == 0){
+		if(g.length == 0){
 			alert("more");
 		}
 	</script>
