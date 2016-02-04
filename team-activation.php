@@ -5,10 +5,10 @@
 	
 	if(isset($_POST["activate"])){
 			
-			
+			echo $u;
 			//Aktivacija računa
-			$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
-			$query = mysqli_query($db_conx, $sql);
+			/*$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
+			$query = mysqli_query($db_conx, $sql);*/
 			
 			//Stvaranje sessije
 			/*$_SESSION['sudionik'] = $u; 
