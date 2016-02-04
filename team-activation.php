@@ -1,18 +1,26 @@
 <?php
+	session_start();
+	
 	//Dohvaća string username iz 'GET', ako postoji, aktivira account
 	if (isset($_GET['user'])) {
 		
 		include_once("php_includes/db-conx.php");
+		include_once("php_includes/recaptchalib.php");
+
 		$u = $_GET['user'];
 		
-		$sql="SELECT * FROM `Teams` WHERE username='$u' LIMIT 1";
+		$sql="SELECT * FROM `Teams` WHERE username='$u' and activated='0' LIMIT 1";
 		$result = mysqli_query($db_conx, $sql);
 		$count = mysqli_num_rows($result);
 		
-		//Postoji zapis, Aktiviraj account
+		//Postoji zapis, Prikaži Web sa reCaptch-om
 		if ($count == 1){ 
-			/*$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
-			$query = mysqli_query($db_conx, $sql);*/
+			
+			//ReCaptcha
+			$secret = "6LetbBcTAAAAAErncFuDv2DGcFAcRTIorbdXgJoQ";
+			$response = null;
+			$reCaptcha = new ReCaptcha($secret);
+			
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -65,7 +73,15 @@
 		<div class="logo-text">
 			<p>Belot-organizer</p>
 		</div>
-		<div class="g-recaptcha" data-sitekey="6LetbBcTAAAAAOZ7lysOR74EwCHB63s-W8k47gQW"></div>
+		<hr class="tab-gap gap">		
+		<div class="header-text">
+			<p>Na korak ste do potpune registracije. Dokažite da ste od krvi i mesa :</p>
+		</div>
+		<div class="g-recaptcha" style="margin-left:-10px;" data-sitekey="6LetbBcTAAAAAOZ7lysOR74EwCHB63s-W8k47gQW"></div>
+		<hr class="tab-gap gap">		
+		<div class="footer">
+			<p>Copyright © 2016 Belot-organizer • <span style="font-style:italic;">WebApp</span> • 31 000 Osijek</p>
+		</div>
 	</div>	
 	<script src="js/jquery.js"></script>
 	<script src="js/imagesloaded.pkgd.min.js"></script>
@@ -79,11 +95,33 @@
 			});
 		});
 	</script>
+	<?php
+		//Ako je captcha poslala response, Google ga verificira
+		if ($_POST["g-recaptcha-response"]) {
+		
+			$response = $reCaptcha->verifyResponse(
+				$_SERVER["REMOTE_ADDR"],
+				$_POST["g-recaptcha-response"]
+			);
+			
+		}
+		//Ako postoji odgovor i success je 
+		if ($resp != null && $resp->success) {
+			
+			//Aktivacija računa
+			sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
+			$query = mysqli_query($db_conx, $sql);
+			
+			//Stvaranje sessije
+			$_SESSION['sudionik'] = $u; 
+			header("location: index");
+		}
+	?>
 </body>
 </html><?php	
 		}
 		else{
-			echo"nema tog";
+			echo"došlo je do Greške";
 		}
 	}
 

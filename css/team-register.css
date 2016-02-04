@@ -1,19 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,latin-ext);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,300&subset=latin-ext,latin);
 
+/**Custom font **/
+@font-face {
+	font-family: "Logo-font";
+    src: url(fonts/KGKeepYourHeadUp.ttf);
+}
+
 body {
-  width  : 100%;
-  height : 100%;
-  color: #737373;
-  font-family: 'Open Sans', Tahoma, Arial, helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 1.6em;
-  font-weight: 400;
-  z-index:1;
+	width  : 100%;
+	height : 100%;
+	color: #737373;
+	font-family: 'Open Sans', Tahoma, Arial, helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 1.6em;
+	font-weight: 400;
+	z-index:1;
 }
-.logo{
-	font-size:260px;
-}
+
 .container{
 	position: absolute;
 	left: 50%;
@@ -21,15 +25,37 @@ body {
 	height: 1000px;
 	width: 1000px;
 	margin-top: -370px;
-	margin-left: -180px;
+	margin-left: -150px;
 
 }
+.logo{
+	font-size:260px;
+	color: #E06060;
+}
 .logo-text{
-	font-family: 'Roboto', arial, helvetica, sans-serif;
+	font-family: 'Logo-font';
 	font-size:45px;
+	font-weight: 400;
+	color:#E06060;
+	margin-top: 12px;
+	margin-bottom: 40px;
+	margin-left: -28px;
+}
+.header-text{
+	font-size:20px;
 	font-weight: 400;
 	color:#737373;
 	margin-top: 12px;
-	margin-bottom: 40px;
-	margin-left: -10px;
+	margin-bottom: 28px;
+	margin-left: -170px;
+
+}
+.gap{
+	margin-left: -100px;
+	width: 500px;
+}
+.footer{
+	font-size:14px;
+	margin-left:-55px;
+	margin-top: 35px;
 }

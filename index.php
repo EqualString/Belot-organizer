@@ -8,7 +8,7 @@
 		header("location: organizer");
 	}
 	if(isset($_SESSION['sudionik'])){
-		header("location: participant");
+		echo "ima";
 	}
 	
 ?>
