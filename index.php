@@ -11,12 +11,16 @@
 		header("location: participant.php");
 	}
 	
-	include ("php_includes/AltoRouter.php");
+	//Router
+	require "php_includes/AltoRouter.php";
 	$router = new AltoRouter();
-	$router->setBasePath('');
-
-	$router->map('GET','/', 'index.php', 'home');
-	$router->map('GET','/home/', 'router.php', 'home-home');
+	
+	$router->map( 'GET', '/', function() {
+		require __DIR__ . '/index.php';
+	});
+	$router->map( 'GET', '/home', function() {
+		require __DIR__ . 'router.php';
+	});
 ?>
 <!DOCTYPE HTML>
 <html>
