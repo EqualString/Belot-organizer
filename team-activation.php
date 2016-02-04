@@ -1,9 +1,11 @@
 <?php
 	session_start();
 	
+	include("php_includes/db-conx.php");
+	
 	if(isset($_POST["activate"])){
 			
-			include_once("php_includes/db-conx.php");
+			
 			//Aktivacija računa
 			$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
 			$query = mysqli_query($db_conx, $sql);
@@ -16,7 +18,6 @@
 	//Dohvaća string username iz 'GET', ako postoji, aktivira account
 	if (isset($_GET['user'])) {
 		
-		include_once("php_includes/db-conx.php");
 		$u = $_GET['user'];
 		
 		$sql="SELECT * FROM `Teams` WHERE username='$u' and activated='0' LIMIT 1";
