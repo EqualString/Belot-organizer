@@ -46,7 +46,7 @@
 	
 	<!-- MODERNIZR -->
     <script src="js/modernizr.js"></script>
-	<script src='https://www.google.com/recaptcha/api.js?hl=hr?render=explicit'></script>
+	<script src='https://www.google.com/recaptcha/api.js?hl=hr'></script>
 	
 </head>
 
@@ -77,7 +77,7 @@
 		<div class="header-text">
 			<p>Na korak ste do potpune registracije. Dokažite da ste od krvi i mesa :</p>
 		</div>
-		<div id="Captcha" style="margin-left:-10px;"></div>
+		<div class="g-recaptcha" style="margin-left:-10px;" data-sitekey="6LetbBcTAAAAAOZ7lysOR74EwCHB63s-W8k47gQW" data-callback="verifyCallback"></div>
 		<hr class="tab-gap gap">		
 		<div class="footer">
 			<p>Copyright © 2016 Belot-organizer • <span style="font-style:italic;">WebApp</span> • 31 000 Osijek</p>
@@ -93,10 +93,6 @@
 					$("#loading").fadeOut(950);
 				}, 1000);	
 			});
-		});
-		var captchaWidgetId = grecaptcha.render( 'Captcha', {
-			'sitekey' : '6LetbBcTAAAAAOZ7lysOR74EwCHB63s-W8k47gQW',  // required
-			'callback': 'verifyCallback'  // optional
 		});
 		var verifyCallback = function( response ) {
 			console.log( 'g-recaptcha-response: ' + response );
