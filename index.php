@@ -21,6 +21,7 @@
 	
 	// map homepage
 	$router->map( 'GET', '/index', function() {
+		echo "nada";
 		require __DIR__ . '/index.php';
 	});
 	
