@@ -96,21 +96,15 @@
 			});
 		});
 		var verifyCallback = function( response ) {
-			alert("uspješno");
+			setTimeout(function(){
+				var ajax = ajaxObj("POST", "team-activation.php");
+				ajax.send("activate");
+			}, 2500);	
 		};
 	</script>
 	<?php
-		//Ako je captcha poslala response, Google ga verificira
-		if ($_POST["g-recaptcha-response"]) {
 		
-			$response = $reCaptcha->verifyResponse(
-				$_SERVER["REMOTE_ADDR"],
-				$_POST["g-recaptcha-response"]
-			);
-			
-		}
-		//Ako postoji odgovor i success je 
-		if ($resp != null && $resp->success) {
+		if(isset($_POST["activate"])){
 			
 			//Aktivacija računa
 			$sql = "UPDATE `Teams` SET activated='1' WHERE username='$u' LIMIT 1";
@@ -118,7 +112,7 @@
 			
 			//Stvaranje sessije
 			$_SESSION['sudionik'] = $u; 
-			//header("location: index");
+			header("location: index");
 		}
 	?>
 </body>
