@@ -5,10 +5,10 @@
 	
 	//Test sesije
 	if(isset($_SESSION['organizator'])){
-		header("location: organizer.php");
+		header("location: organizer");
 	}
 	if(isset($_SESSION['sudionik'])){
-		header("location: participant.php");
+		header("location: participant");
 	}
 	
 ?>
@@ -393,6 +393,7 @@
 	<script type="text/javascript" src="https://www.l2.io/ip.js?var=myip"></script>
 	<script src="js/imagesloaded.pkgd.min.js"></script>
 	<script src="js/passwd-strenght.js"></script>
+	<script src="js/team-main.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
