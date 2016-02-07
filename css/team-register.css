@@ -16,6 +16,7 @@ body {
 	line-height: 1.6em;
 	font-weight: 400;
 	z-index:1;
+	background: transparent url("../img/tex1.jpg") repeat scroll 0% 0%;
 }
 
 .container{

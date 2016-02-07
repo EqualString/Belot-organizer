@@ -4,11 +4,14 @@
 	session_start();
 	
 	//Test sesije
+	//Ako postoji makni ih headerom
 	if(isset($_SESSION['organizator'])){
-		header("location: organizer");
+		/*header("location: /organizer");
+		exit();*/
 	}
 	if(isset($_SESSION['sudionik'])){
-		echo "ima";
+		/*header("location: /participant");
+		exit();*/
 	}
 	
 ?>
@@ -36,7 +39,7 @@
 	<link rel="stylesheet" href="css/loader.css">
 	
 	<!-- MODERNIZR -->
-    <script src="js/modernizr.js"></script>
+    <script src="js/vendor/modernizr.js"></script>
 	
 </head>
 
@@ -224,34 +227,41 @@
                                         </div>
                                     </div>	
 								</div>
-                                <button type="submit" id="reg-team" class="btn btn-primary btn-lg">Registriraj ekipu</button>
+                                <button type="submit" id="reg-team" class="btn btn-primary btn-lg" style="width:200px;"><span id="btn-reg-tm">Registriraj ekipu</span></button>
                             </form>
-					
                         </div>
 						<!-- Dodavanje organizatora -->
                         <div class="tab-pane fade" id="tab-2">
                             <h2>Registriraj se kao organizator <i class="icon icon-add-organizer"></i></h2>
-                            <form>
-								<h4>Osobni podaci</h4>
+                            <form onsubmit="return false;">
+								<h4>Vaši podaci</h4>
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon"></i>
-                                            <label>Ime </label>
-                                            <input class="form-control" placeholder="Vaše ime" type="text" />
+                                            <label>Ime</label>
+                                            <input id="org-name" onblur="checkorgname()" class="form-control" placeholder="Vaše ime" type="text" />
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon"></i>
                                             <label>Prezime</label>
-                                            <input class="form-control" placeholder="Vaše prezime" type="text" />
+                                            <input id="org-second-name" onblur="checkorgname()" class="form-control" placeholder="Vaše prezime" type="text" />
                                         </div>
-                                    </div>   
+                                    </div> 
+									<div class="col-md-4">
+										<div id="org-add-status1" class="form-group form-group-lg form-group-icon-left">
+                                        </div>
+                                    </div>									
                                 </div>
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-phone input-icon"></i>
                                             <label>Broj telefona</label>
-                                            <input class="form-control" placeholder="Broj kontakt telefona" type="text" />
+                                            <input id="org-broj-mob" onblur="checkorgmob()" class="form-control" placeholder="Broj kontakt telefona" type="text" />
+                                        </div>
+                                    </div>
+									<div class="col-md-4">
+										<div id="org-add-status2" class="form-group form-group-lg form-group-icon-left">
                                         </div>
                                     </div>
 								</div>
@@ -261,17 +271,39 @@
 									<div class="col-md-4">
 										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-envelope input-icon"></i>
                                             <label>E-mail adresa</label>
-                                            <input class="form-control" placeholder="Kontakt mail" type="text" />
+                                            <input id="org-email" onblur="checkorgmail()" class="form-control" placeholder="Kontakt mail" type="text" />
+                                        </div>
+                                    </div>
+									<div class="col-md-4">
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-group input-icon"></i>
+                                            <label>Korisničko ime</label>
+                                            <input id="org-username" onblur="checkorgmail()" class="form-control" placeholder="Korisničko ime" type="text" />
+                                        </div>
+                                    </div>
+									<div class="col-md-4">
+										<div id="org-add-status3" class="form-group form-group-lg form-group-icon-left">
+                                        </div>
+                                    </div>	
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon"></i>
+                                            <label>Lozinka</label>
+                                            <input id="org-passwd1" onblur="checkorgpass()" class="form-control" placeholder="Vaša lozinka" type="password" />
                                         </div>
                                     </div>
 									<div class="col-md-4">
 										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon"></i>
-                                            <label>Lozinka</label>
-                                            <input class="form-control" placeholder="Vaša lozinka" type="password" />
+                                            <label>Ponovljena lozinka</label>
+                                            <input id="org-passwd2" onblur="checkorgpass()" class="form-control" placeholder="Vaša lozinka" type="password" />
                                         </div>
                                     </div>
+									<div class="col-md-4">
+										<div id="org-add-status4" class="form-group form-group-lg form-group-icon-left">
+                                        </div>
+                                    </div>	
 								</div>
-                                <button id="show-org-succes" class="btn btn-primary btn-lg">Registriraj organizatora</button>
+                                <button type="submit" id="reg-org" class="btn btn-primary btn-lg" style="width:250px;"><span id="btn-reg-org">Registriraj organizatora</span></button>
                             </form>
                         </div>
                     </div>
@@ -288,7 +320,7 @@
                 <div class="row row-wrap">
                     <div class="col-md-3">
                         <div class="top-logo">
-							<a class="logo" href="index.html">
+							<a class="logo" href="index">
 								<i class="icon icon-Belot-organizer" style="font-size:50px; margin-top:-20px;"></i>
 								<span style="font-size:23px;">Belot - Organizer ®</span>
 							</a>
@@ -380,20 +412,21 @@
 	<div id="org-add-succes">
 		<a class="icon icon-cancel" id ="cls-org-add-succes"></a>
 		<h3>Uspješno ste se registrirali kao organizator!</h3>
-		<h4>Na korak ste do potpune registracije. Molimo provjerite uneseni e-mail: <span id="org-add-succes-mail"></span> zbog aktivacije računa.</h4>
+		<h4>Na korak ste do potpune registracije. Molimo provjerite uneseni e-mail: <span id="org-add-succes-mail"></span>, zbog aktivacije računa.</h4>
 	</div>
 	
-	<script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/slimmenu.js"></script>
-    <script src="js/nicescroll.js"></script>
-    <script src="js/owl-carousel.js"></script>
-	<script src="js/ajax.js"></script>
-	<script src="js/mandrill.js"></script>
+	<script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/bootstrap.js"></script>
+    <script src="js/vendor/slimmenu.js"></script>
+    <script src="js/vendor/nicescroll.js"></script>
+    <script src="js/vendor/owl-carousel.js"></script>
+	<script src="js/vendor/imagesloaded.pkgd.min.js"></script>
+	<script src="js/vendor/mandrill.js"></script>
 	<script type="text/javascript" src="https://www.l2.io/ip.js?var=myip"></script>
-	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/ajax.js"></script>
 	<script src="js/passwd-strenght.js"></script>
-	<script src="js/team-main.js"></script>
+	<script src="js/team/team-main.js"></script>
+	<script src="js/organizer/organizer-main.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

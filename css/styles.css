@@ -24,6 +24,17 @@ a:active {
   outline: none;
 }
 
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* IE/Edge */
+	user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+	cursor: default;
+}
+
 h1,
 h2,
 h3,
@@ -264,6 +275,7 @@ big,
 #org-add-succes h4 {
 	margin-top: 20px;
 	margin-left: 40px;
+	margin-right: 40px;
 	margin-bottom: 35px;
 }
 #cls-org-add-succes{
@@ -2163,7 +2175,7 @@ body {
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
-  background: rgba(0, 0, 0, 0.2) url("../img/video-overlay.png") repeat scroll 0% 0%;
+  background: rgba(0, 0, 0, 0.2) url("../img/wrap.png") repeat scroll 0% 0%;
 
 }
 .bg-holder > .bg-mask-lighten {
@@ -2368,7 +2380,8 @@ img.pp-img {
 .header-top {
   padding: 10px 0;
   max-height: 60px;
-  background: #3F3D42;
+  background: url("../img/crossed-pattern.png") repeat scroll 0% 0%;
+  background-color:#3F3D42;
 }
 @media (max-width:992px) {
   .header-top {
@@ -2632,7 +2645,8 @@ div.nav-drop {
   padding: 0 7px;
 }
 footer#main-footer {
-  background: #262626;
+  background: url("../img/crossed-pattern.png") repeat scroll 0% 0%;
+  background-color:#262626;
   padding: 60px 0 30px 0;
   color: #e6e6e6;
   font-size: 11px;

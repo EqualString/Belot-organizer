@@ -49,13 +49,11 @@ $("#cls-team-add-succes").click( function(){
 	location.reload();
 });
 
-$("#show-org-succes").click( function(){ 
-	$('#global, #org-add-succes').fadeIn(550).css("display","block");
-	$('body').addClass('stop-scrolling');
-});
 $("#cls-org-add-succes").click( function(){ 
 	$('#global, #org-add-succes').fadeOut(550);
 	$('body').removeClass('stop-scrolling');
+	//Gašenjem prozora se stranica refresha
+	location.reload();
 });
 
 $('.btn').button();

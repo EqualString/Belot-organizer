@@ -7,10 +7,10 @@
 				
 		//Aktivacija računa
 		$username = $_POST["activate"];
-		$sql = "UPDATE `Teams` SET activated='1' WHERE username='$username' LIMIT 1";
+		$sql = "UPDATE `Organizers` SET activated='1' WHERE username='$username' LIMIT 1";
 		
 		if (mysqli_query($db_conx, $sql)){
-			$_SESSION['sudionik'] = $username; 
+			$_SESSION['organizator'] = $username; 
 			echo "1";	
 			exit();
 		} else{
@@ -25,7 +25,7 @@
 		
 		$u = $_GET['user'];
 		
-		$sql="SELECT * FROM `Teams` WHERE username='$u' and activated='0' LIMIT 1";
+		$sql="SELECT * FROM `Organizers` WHERE username='$u' and activated='0' LIMIT 1";
 		$result = mysqli_query($db_conx, $sql);
 		$count = mysqli_num_rows($result);
 		
@@ -96,7 +96,7 @@
 	<script src="js/vendor/jquery.js"></script>
 	<script src="js/vendor/imagesloaded.pkgd.min.js"></script>
 	<script src="js/ajax.js"></script>
-	<script src="js/team/team-activation.js"></script>
+	<script src="js/organizer/organizer-activation.js"></script>
 	
 </body>
 </html><?php	

@@ -3,7 +3,7 @@ var error_empty = '<i class="icon icon-cancel fal-icon input-icon"></i><label st
 var error_teamname = '<i class="icon icon-cancel fal-icon input-icon"></i><label style="color:#fff">.</label><p class="validation-status">Postojeći naziv ekipe u sustavu.</p>'
 var error_teammail = '<i class="icon icon-cancel fal-icon input-icon"></i><label style="color:#fff">.</label><p class="validation-status">Postojeća e-mail adresa u sustavu.</p>'
 var error_validmail = '<i class="icon icon-cancel fal-icon input-icon"></i><label style="color:#fff">.</label><p class="validation-status" style="margin-top:7px;">Niste unijeli ispravnu e-mail adresu.</p>'
-var error_teamusername = '<i class="icon icon-cancel fal-icon input-icon"></i><label style="color:#fff">.</label><p class="validation-status" style="margin-top:7px;">Postojeće korisničko ime u sustavu.</p>'
+var error_teamusername = '<i class="icon icon-cancel fal-icon input-icon"></i><label style="color:#fff">.</label><p class="validation-status" style="margin-top:17px;">Postojeće korisničko ime u sustavu.</p>'
 var succes = '<i class="icon icon-checkmark suc-icon input-icon"></i>';
 
 //Error flag
@@ -184,3 +184,18 @@ $("#reg-team").click( function(){
 		ajax.send("teamregister="+tmu+"&tme="+tme+"&tn1="+tn1+"&tn2="+tn2+"&tmn="+tmn+"&tbm="+tbm+"&ts1="+ts1);
 	}
 });	
+
+//btn styling
+ $("#reg-team").mouseenter(function() {  
+	if (err == true){
+		$('#btn-reg-tm').html("<i class='icon icon-cancel' style='font-size:20px;'></i>");
+		$("#reg-team").css("background","#BD3C3C");
+	} else {
+		$('#btn-reg-tm').html("<i class='icon icon-checkmark' style='font-size:20px;'></i>");
+		$("#reg-team").css("background","#7CC576").css("border-color","#4ECC7A");
+	}
+	})
+	.mouseleave(function() {  
+    $('#btn-reg-tm').text("Registriraj ekipu");
+	$("#reg-team").css("background","#E06060").css("border-color","#BD3C3C");;
+});
