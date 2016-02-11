@@ -60,6 +60,9 @@
 .icon-key:before {
     content: "\e90b";
 }
+.icon-profile2:before {
+    content: "\e90f";
+}
 .icon-organizer-profile:before {
     content: "\e905";
 }
@@ -75,7 +78,32 @@
 .icon-user-profile-plus:before {
     content: "\e973";
 }
+.icon-spinner:before {
+    content: "\e97a";
+}
+.icon-spinner3:before {
+    content: "\e97c";
+}
+.icon-spinner6:before {
+    content: "\e97f";
+}
 .icon-cancel-circle:before {
     content: "\ea0d";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -21,7 +21,8 @@ function getParameterByName(name, url) {
 		
 //Callback od reCaptche
 var verifyCallback = function( response ) {
-	//Dohvaćanje stringa iz url-a
+	//Dohvaćanje stringa iz url-a i stavljanje timer-a
+	$('#timer').html('<i class="fa fa-spinner fa-pulse timer"></i>');
 	var acc = getParameterByName('user');
 	setTimeout(function(){
 		var ajax = ajaxObj("POST", "team-activation.php");

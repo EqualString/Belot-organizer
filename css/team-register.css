@@ -51,6 +51,12 @@ body {
 	margin-left: -170px;
 
 }
+.timer{
+	font-size:50px; 
+	margin-top: 18px;
+	color: #E06060;
+	margin-left: 110px;
+}
 .gap{
 	margin-left: -100px;
 	width: 500px;

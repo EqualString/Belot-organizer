@@ -90,7 +90,7 @@
 								<li><a href="user-profile.html">Rezultati</a></li>
                             </ul>
                         </li>
-                        <li style="float:right;"><a href="#"><span class="fa fa-lock"></span> Prijava</a>
+                        <li style="float:right;"><a href="#"><span class="fa fa-sign-in"></span> Prijava</a>
                             <ul>                            
                                 <li><a id="show-login-org" href="#">Organizatori</a></li>
                                 <li><a id="show-login-comp" href="#">Sudionici</a></li>
@@ -155,13 +155,13 @@
 								<h4>Podaci o ekipi</h4>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon"></i>
+                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon input-icon-hightlight"></i>
                                             <label>Ime 1. člana</label>
                                             <input id="team-name1" onblur="checkplayername()" class="form-control" placeholder="Ime prvog člana ekipe" type="text" />
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon"></i>
+                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon input-icon-hightlight"></i>
                                             <label>Ime 2. člana</label>
                                             <input id="team-name2" onblur="checkplayername()" class="form-control" placeholder="Ime drugog člana ekipe" type="text" />
                                         </div>
@@ -173,13 +173,13 @@
                                 </div>
 								<div class="row">
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-file-text input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-file-text input-icon input-icon-hightlight"></i>
                                             <label>Naziv ekipe</label>
                                             <input id="team-name" onblur="checkteamname()" class="form-control" placeholder="Naziv Vaše ekipe" type="text" />
                                         </div>
                                     </div>
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-phone input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-phone-square input-icon input-icon-hightlight"></i>
                                             <label>Broj telefona</label>
                                             <input id="team-broj-mob" onblur="checkteamname()" class="form-control" placeholder="Broj kontakt telefona" type="text" />
                                         </div>
@@ -193,13 +193,13 @@
 								<h4>Podaci za prijavu u sustav</h4>
 								<div class="row">
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-envelope input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-hightlight"></i>
                                             <label>E-mail adresa</label>
                                             <input id="team-email" onblur="checkteammail()" class="form-control" placeholder="Kontakt mail" type="text" />
                                         </div>
                                     </div>
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-group input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-group input-icon input-icon-hightlight"></i>
                                             <label>Korisničko ime</label>
                                             <input id="team-username" onblur="checkteammail()" class="form-control" placeholder="Korisničko ime" type="text" />
                                         </div>
@@ -211,13 +211,13 @@
 								</div>
 								<div class="row">
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon input-icon-hightlight"></i>
                                             <label>Lozinka</label>
                                             <input id="team-passwd1" onblur="checkteampass()" class="form-control" placeholder="Vaša lozinka" type="password" />
                                         </div>
                                     </div>
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon input-icon-hightlight"></i>
                                             <label>Ponovljena lozinka</label>
                                             <input id="team-passwd2" onblur="checkteampass()" class="form-control" placeholder="Vaša lozinka" type="password" />
                                         </div>
@@ -237,13 +237,13 @@
 								<h4>Vaši podaci</h4>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon"></i>
+                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon input-icon-hightlight"></i>
                                             <label>Ime</label>
                                             <input id="org-name" onblur="checkorgname()" class="form-control" placeholder="Vaše ime" type="text" />
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon"></i>
+                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon input-icon-hightlight"></i>
                                             <label>Prezime</label>
                                             <input id="org-second-name" onblur="checkorgname()" class="form-control" placeholder="Vaše prezime" type="text" />
                                         </div>
@@ -255,7 +255,7 @@
                                 </div>
 								<div class="row">
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-phone input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-phone-square input-icon input-icon-hightlight"></i>
                                             <label>Broj telefona</label>
                                             <input id="org-broj-mob" onblur="checkorgmob()" class="form-control" placeholder="Broj kontakt telefona" type="text" />
                                         </div>
@@ -269,13 +269,13 @@
 								<h4>Podaci za prijavu u sustav</h4>
 								<div class="row">
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-envelope input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-hightlight"></i>
                                             <label>E-mail adresa</label>
                                             <input id="org-email" onblur="checkorgmail()" class="form-control" placeholder="Kontakt mail" type="text" />
                                         </div>
                                     </div>
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-group input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-group input-icon input-icon-hightlight"></i>
                                             <label>Korisničko ime</label>
                                             <input id="org-username" onblur="checkorgmail()" class="form-control" placeholder="Korisničko ime" type="text" />
                                         </div>
@@ -287,13 +287,13 @@
 								</div>
 								<div class="row">
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon input-icon-hightlight"></i>
                                             <label>Lozinka</label>
                                             <input id="org-passwd1" onblur="checkorgpass()" class="form-control" placeholder="Vaša lozinka" type="password" />
                                         </div>
                                     </div>
 									<div class="col-md-4">
-										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon"></i>
+										<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon input-icon-hightlight"></i>
                                             <label>Ponovljena lozinka</label>
                                             <input id="org-passwd2" onblur="checkorgpass()" class="form-control" placeholder="Vaša lozinka" type="password" />
                                         </div>
@@ -352,58 +352,73 @@
         </footer>
     </div>
 	<!-- POPUPS -->
+	<!-- Login -->
 	<div id="login-organizer">
 		<a class="icon icon-cancel" id ="cls-loging-org"></a>
 		<h3>Prijava kao organizator</h3>
-		<form>
+		<form onsubmit="return false;">
 			<div class="login-style">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-envelope input-icon"></i>
-							<label>E-mail adresa</label>
-							<input class="typeahead form-control" placeholder="E-mail adresa" type="text" />
+						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-user input-icon input-icon-hightlight"></i>
+							<label>Korisničko ime</label>
+							<input id="organizer-login-username" class="form-control" placeholder="Korisničko ime" type="text" />
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon"></i>
+						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon input-icon-hightlight"></i>
 							<label>Lozinka</label>
-							<input class="typeahead form-control" placeholder="Lozinka" type="password" />
+							<input id="organizer-login-password" class="form-control" placeholder="Lozinka" type="password" />
 						</div>
 					</div>
-				</div>	
-				<hr class="tab-gap">					
-				<input class="btn btn-primary" style="height:48px;" type="submit" value="Prijava" />
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div id="organizer-login-status" class="form-group">
+						</div>
+					</div>
+				</div>					
+				<hr class="tab-gap"></hr>					
+				<input id="organizer-login-btn" class="btn btn-primary" style="height:48px;" type="submit" value="Prijava" />
 			</div>	
         </form>
 	</div>
+	
 	<div id="login-comp">
 		<a class="icon icon-cancel" id ="cls-loging-comp"></a>
 		<h3>Prijava kao sudionik</h3>
-		<form>
+		<form onsubmit="return false;">
 			<div class="login-style">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-envelope input-icon"></i>
-							<label>E-mail adresa</label>
-							<input class="typeahead form-control" placeholder="E-mail adresa" type="text" />
+						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-hightlight"></i>
+							<label>Korisničko ime</label>
+							<input id="team-login-username" class="form-control" placeholder="Korisničko ime" type="text" />
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon"></i>
+						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-key input-icon input-icon-hightlight"></i>
 							<label>Lozinka</label>
-							<input class="typeahead form-control" placeholder="Lozinka" type="password" />
+							<input id="team-login-password" class="form-control" placeholder="Lozinka" type="password" />
 						</div>
 					</div>
 				</div>	
-				<hr class="tab-gap">					
-				<input class="btn btn-primary" style="height:48px;" type="submit" value="Prijava" />
+				<div class="row">
+					<div class="col-md-4">
+						<div id="team-login-status" class="form-group">
+						</div>
+					</div>
+				</div>	
+				<hr class="tab-gap"></hr>					
+				<input id="team-login-btn" class="btn btn-primary" style="height:48px;" type="submit" value="Prijava" />
 			</div>	
         </form>
 	</div>
+	<!-- Registracija -->
 	<div id="team-add-succes">
 		<a class="icon icon-cancel" id ="cls-team-add-succes"></a>
 		<h3>Uspješno ste registrirali ekipu!</h3>
@@ -426,7 +441,9 @@
 	<script src="js/ajax.js"></script>
 	<script src="js/passwd-strenght.js"></script>
 	<script src="js/team/team-main.js"></script>
+	<script src="js/team/team-login.js"></script>
 	<script src="js/organizer/organizer-main.js"></script>
+	<script src="js/organizer/organizer-login.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

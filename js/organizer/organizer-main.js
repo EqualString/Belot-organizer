@@ -171,12 +171,19 @@ $("#reg-org").click( function(){
 
 //btn styling
  $("#reg-org").mouseenter(function() {  
-	if (err2 == true){
-		$('#btn-reg-org').html("<i class='icon icon-cancel' style='font-size:20px;'></i>");
-		$("#reg-org").css("background","#BD3C3C");
-	} else {
+	var tn1 = $('#org-name').val();
+	var tn2 = $('#org-second-name').val();
+	var tbm = $('#org-broj-mob').val();
+	var tme = $('#org-email').val();
+	var tmu = $('#org-username').val();
+	var ts1 = $('#org-passwd1').val();
+	var ts2 = $('#org-passwd2').val();
+	if ((err2 == false)&&(tn1 != "")&&(tn2 != "")&&(tbm != "")&&(tme != "")&&(tmu != "")&&(ts1 != "")&&(ts2 != "")){
 		$('#btn-reg-org').html("<i class='icon icon-checkmark' style='font-size:20px;'></i>");
 		$("#reg-org").css("background","#7CC576").css("border-color","#4ECC7A");
+	} else {
+		$('#btn-reg-org').html("<i class='icon icon-cancel' style='font-size:20px;'></i>");
+		$("#reg-org").css("background","#BD3C3C");
 	}
 	})
 	.mouseleave(function() {  

@@ -186,13 +186,21 @@ $("#reg-team").click( function(){
 });	
 
 //btn styling
- $("#reg-team").mouseenter(function() {  
-	if (err == true){
-		$('#btn-reg-tm').html("<i class='icon icon-cancel' style='font-size:20px;'></i>");
-		$("#reg-team").css("background","#BD3C3C");
-	} else {
+ $("#reg-team").mouseenter(function() {
+	var tn1 = $('#team-name1').val();
+	var tn2 = $('#team-name2').val();
+	var tmn = $('#team-name').val();
+	var tbm = $('#team-broj-mob').val();
+	var tme = $('#team-email').val();
+	var tmu = $('#team-username').val();
+	var ts1 = $('#team-passwd1').val();
+	var ts2 = $('#team-passwd2').val();
+	if ((err == false)&&(tn1 != "")&&(tn2 != "")&&(tmn != "")&&(tbm != "")&&(tme != "")&&(tmu != "")&&(ts1 != "")&&(ts2 != "")){
 		$('#btn-reg-tm').html("<i class='icon icon-checkmark' style='font-size:20px;'></i>");
 		$("#reg-team").css("background","#7CC576").css("border-color","#4ECC7A");
+	} else {
+		$('#btn-reg-tm').html("<i class='icon icon-cancel' style='font-size:20px;'></i>");
+		$("#reg-team").css("background","#BD3C3C");
 	}
 	})
 	.mouseleave(function() {  

@@ -166,6 +166,27 @@ big,
 	text-decoration: none;
 	cursor: pointer;
 }
+#organizer-login-status{
+	margin-top:0px; 
+	margin-bottom:0px;
+}
+#team-login-status{
+	margin-top:0px; 
+	margin-bottom:0px;
+}
+.login-status{
+	font-size:18px; 
+	width:500px; 
+	color:#E06060;
+	margin-top:2px;
+}
+.timer2{
+	font-size:40px;
+	margin-left:167px;
+	color: #E06060;
+	margin-top:-5px;
+	height:40px;
+}
 #login-comp{
 	width: 470px;
 	height: auto;
