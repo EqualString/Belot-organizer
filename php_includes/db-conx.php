@@ -1,12 +1,12 @@
 <?php
 	//Koristi se remote baza podataka
 	//Database as a Service (DBaaS)
-	$servername = "db4free.net:3306";
-	$username = "belotorganizer";
+	$host = "johnny.heliohost.org";
+	$username = "belot_user";
 	$password = "Luafr12";
-	$database = "belot";
+	$database = "belot_organizer";
 	
-	$db_conx = mysqli_connect( $servername, $username, $password, $database);
+	$db_conx = mysqli_connect($host, $username, $password, $database);
 
 	if (mysqli_connect_errno()){
 		echo mysqli_connect_error();

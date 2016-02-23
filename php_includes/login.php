@@ -5,12 +5,12 @@
 	//Test sesije
 	//Ako postoji makni ih headerom
 	if(isset($_SESSION['organizator'])){
-		/*header("location: /organizer");
-		exit();*/
+		header("location: /organizer");
+		exit();
 	}
 	if(isset($_SESSION['sudionik'])){
-		/*header("location: /participant");
-		exit();*/
+		header("location: /participant");
+		exit();
 	}
 	
 ?>
@@ -60,7 +60,9 @@
 	</div>	
 	<!-- Global -->
 	<div class="logo">
-		<i class="icon icon-Belot-organizer"></i>
+		<a href="index">
+			<i class="icon icon-Belot-organizer"></i>
+		</a>	
 	</div>
 	<!-- From toggling -->
 	<div class="module form-module">
@@ -132,7 +134,7 @@
 		</div>
 	</div>	
 	<div class="footer">
-		<p>Copyright © 2016 Belot-organizer • <span style="font-style:italic;">WebApp</span> • 31 000 Osijek</p>
+		<p>Copyright © 2016 <a href="index">Belot-organizer</a> • <span style="font-style:italic;">WebApp</span> • 31 000 Osijek</p>
 	</div>
 	<script src="js/vendor/jquery.js"></script>
 	<script src="js/vendor/imagesloaded.pkgd.min.js"></script>

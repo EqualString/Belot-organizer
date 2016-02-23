@@ -190,3 +190,55 @@ $("#reg-org").click( function(){
     $('#btn-reg-org').text("Registriraj organizatora");
 	$("#reg-org").css("background","#E06060").css("border-color","#BD3C3C");;
 });
+
+//Kreiranje novog turnira za organizatore
+
+var err3 = true;
+
+function checktournname() {	
+	var tnname = $('#tourn-name').val();
+	
+	if (tnname === ""){
+		$('#tourn-name-status').html(error_empty2);
+		err3 = true;
+	} else {
+		
+		var ajax = ajaxObj("POST", "php_includes/tournament-validation.php");
+		//Primanje od strane php-a
+		ajax.onreadystatechange = function() {
+	        if(ajaxReturn(ajax) == true) {
+				if(ajax.responseText == "0"){
+					$('#tourn-name-status').html(succes);
+					err3 = false;
+				}
+				if(ajax.responseText == "1"){
+					$('#tourn-name-status').html('<i class="icon icon-cancel fal-icon input-icon"></i><label style="color:#fff">.</label><p class="validation-status" style="margin-top:17px;">Postojeći naziv turnira u sustavu.</p>');
+					err3 = true;
+				}
+	        }
+        }
+		ajax.send("tnnamecheck="+tnname);
+
+	}
+}
+
+$("#create-tn").click( function(){ 
+	var maxteams = $("#team-num option:selected").text();
+	var tnname = $('#tourn-name').val();
+	
+	if ((err3 == false)&&(tnname != "")){
+		var ajax = ajaxObj("POST", "organizer");
+			//Primanje od strane php-a
+			ajax.onreadystatechange = function() {
+				if(ajaxReturn(ajax) == true) {
+					//Popup
+					$('#global, #org-add-succes').fadeIn(550).css("display","block");
+					$('body').addClass('stop-scrolling');
+				}
+			}
+		ajax.send("tncreate="+tnname +"&tnmax="+maxteams);
+	}	
+
+});
+
+

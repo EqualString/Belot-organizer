@@ -1,6 +1,7 @@
 <?php
 
 	include_once("db-conx.php");
+	session_start();
 		
 	if(isset($_POST["organizer-login"])){
 		$username = $_POST["organizer-login"];

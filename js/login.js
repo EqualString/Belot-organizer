@@ -30,13 +30,13 @@ $("#organizer-login-btn").click( function(){
 			ajax.onreadystatechange = function() {
 				if(ajaxReturn(ajax) == true) {
 					if(ajax.responseText == "3"){
-						alert("logiran si");
+						window.location.href = "/organizer";
 					}
 					if(ajax.responseText == "2"){
 						$("#organizer-login-status").html('<p class="login-status"><i class="fa fa-exclamation-circle"></i>&nbsp; Korisnički račun nije aktiviran!</p>');
 					}
 					if(ajax.responseText == "1"){
-						$("#organizer-login-status").html('<p class="login-status"><i class="fa fa-exclamation-circle"></i>&nbsp; Korisničko ime i lozinka se ne podudaraju</p>');
+						$("#organizer-login-status").html('<p class="login-status" style="margin-left:-33px;"><i class="fa fa-exclamation-circle"></i>&nbsp; Korisničko ime i lozinka se ne podudaraju</p>');
 					}
 					if(ajax.responseText == "0"){
 						$("#organizer-login-status").html('<p class="login-status"><i class="fa fa-exclamation-circle"></i>&nbsp; Nepostojeći korisnik</p>');
@@ -62,13 +62,13 @@ $("#team-login-btn").click( function(){
 			ajax.onreadystatechange = function() {
 				if(ajaxReturn(ajax) == true) {
 					if(ajax.responseText == "3"){
-						alert("logiran si");
+						window.location.href = "/team";
 					}
 					if(ajax.responseText == "2"){
 						$("#team-login-status").html('<p class="login-status"><i class="fa fa-exclamation-circle"></i>&nbsp; Korisnički račun nije aktiviran!</p>');
 					}
 					if(ajax.responseText == "1"){
-						$("#team-login-status").html('<p class="login-status"><i class="fa fa-exclamation-circle"></i>&nbsp; Korisničko ime i lozinka se ne podudaraju</p>');
+						$("#team-login-status").html('<p class="login-status" style="margin-left:-33px;"><i class="fa fa-exclamation-circle"></i>&nbsp; Korisničko ime i lozinka se ne podudaraju</p>');
 					}
 					if(ajax.responseText == "0"){
 						$("#team-login-status").html('<p class="login-status"><i class="fa fa-exclamation-circle"></i>&nbsp; Nepostojeći korisnik</p>');

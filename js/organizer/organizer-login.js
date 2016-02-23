@@ -10,7 +10,7 @@ $("#organizer-login-btn").click( function(){
 			ajax.onreadystatechange = function() {
 				if(ajaxReturn(ajax) == true) {
 					if(ajax.responseText == "3"){
-						alert("logiran si");
+						window.location.href = "/organizer";
 					}
 					if(ajax.responseText == "2"){
 						$("#organizer-login-status").html('<p class="login-status"><i class="fa fa-exclamation-circle"></i>&nbsp; Korisnički račun nije aktiviran!</p>');

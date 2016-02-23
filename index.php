@@ -6,12 +6,12 @@
 	//Test sesije
 	//Ako postoji makni ih headerom
 	if(isset($_SESSION['organizator'])){
-		/*header("location: /organizer");
-		exit();*/
+		header("location: /organizer");
+		exit();
 	}
 	if(isset($_SESSION['sudionik'])){
-		/*header("location: /participant");
-		exit();*/
+		header("location: /team");
+		exit();
 	}
 	
 ?>
@@ -21,7 +21,7 @@
 <head>
 
     <title>Belot-organizer | Početna</title>
-	<link rel="shortcut icon" href="img/favicon.png">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<!-- METAS -->
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta name="keywords" content="Tournament organizer,Belot" />
@@ -68,7 +68,7 @@
                 <div class="container">
                     <div>
                         <div class="top-logo">
-                            <a class="logo" href="index.html">
+                            <a class="logo" href="index">
 								<i class="icon icon-srce"></i>
 								<i class="icon icon-buc"></i>
 								<i class="icon icon-zel"></i>
@@ -82,18 +82,17 @@
             <div class="container">
                 <div class="nav">
                     <ul class="slimmenu" id="slimmenu">
-                        <li class="active"><a href="index.html">Početna</a></li>
-                        <li><a href="success-payment.html">Turniri</a>
+                        <li class="active"><a href="index">Početna</a></li>
+                        <li><a>Turniri</a>
                             <ul>
                                 <li><a href="success-payment.html">U tijeku</a></li>
                                 <li><a href="user-profile.html">Nadolazeći</a></li>
-								<li><a href="user-profile.html">Rezultati</a></li>
                             </ul>
                         </li>
-                        <li style="float:right;"><a href="#"><span class="fa fa-sign-in"></span> Prijava</a>
+                        <li style="float:right;"><a><span class="fa fa-sign-in"></span> Prijava</a>
                             <ul>                            
-                                <li><a id="show-login-org" href="#">Organizatori</a></li>
-                                <li><a id="show-login-comp" href="#">Sudionici</a></li>
+                                <li><a id="show-login-org">Organizatori</a></li>
+                                <li><a id="show-login-comp">Sudionici</a></li>
                             </ul>
                         </li>        
                     </ul>
@@ -144,7 +143,7 @@
                     <ul class="nav nav-tabs" id="myTab">
                         <li class="active"><a href="#tab-1" data-toggle="tab"><i class="icon icon-user-profile-plus"></i> <span >Registracija ekipe</span></a>
                         </li>
-                        <li><a href="#tab-2" data-toggle="tab"><i class="icon icon-organizer-profile"></i> <span >Registracija organizatora</span></a>
+                        <li><a href="#tab-2" data-toggle="tab"><i class="icon icon-profile2"></i> <span >Registracija organizatora</span></a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -314,42 +313,10 @@
             <div class="gap gap-small"></div>
         </div>
 		
-		<!-- FOOTER -->
-        <footer id="main-footer">
-            <div class="container">
-                <div class="row row-wrap">
-                    <div class="col-md-3">
-                        <div class="top-logo">
-							<a class="logo" href="index">
-								<i class="icon icon-Belot-organizer" style="font-size:50px; margin-top:-20px;"></i>
-								<span style="font-size:23px;">Belot - Organizer ®</span>
-							</a>
-						</div>
-                        <p class="mb20">Pomoć u organiziranju i izvođenju turnira u belotu. Pratite nas na:</p>
-                        <ul class="list list-horizontal list-space">
-                            <li>
-                                <a class="fa fa-facebook box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-twitter box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-google-plus box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-linkedin box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h4>Imate pitanja?</h4>
-                        <h4 class="text-color">+385 098 948 7820</h4>
-                        <h4><a href="#" class="text-color">belot.organizer@gmail.com</a></h4>
-                        <p>Vaša IP adresa: <span id="user-ip" style="font-size:14px;"></span>.</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+		<?php
+			include_once ("php_includes/footer.php")
+		?>
+		
     </div>
 	<!-- POPUPS -->
 	<!-- Login -->
