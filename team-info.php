@@ -119,7 +119,7 @@ if (isset($_GET['id'])) {
 					<hr class="tab-gap"></hr>	
 						<h4><i class="fa fa-phone-square"></i> Kontakt:
 							<?php 
-								if((isset($_SESSION['sudionik']))||(isset($_SESSION['sudionik']))){
+								if((isset($_SESSION['sudionik']))||(isset($_SESSION['organizator']))){
 									echo $team_string["brojMob"]; 
 								}else{
 									echo '<a href = "login"><span style="font-size:20px;"><i class="fa fa-exclamation-triangle"></i> Prijavite se</span></a>'; 
@@ -128,7 +128,7 @@ if (isset($_GET['id'])) {
 						<h4>
 						<h4><i class="fa fa-envelope"></i> E-mail:
 							<?php 
-								if((isset($_SESSION['sudionik']))||(isset($_SESSION['sudionik']))){
+								if((isset($_SESSION['sudionik']))||(isset($_SESSION['organizator']))){
 									echo $team_string["email"]; 
 								}else{
 									echo '<a href = "login"><span style="font-size:20px;"><i class="fa fa-exclamation-triangle"></i> Prijavite se</span></a>'; 
