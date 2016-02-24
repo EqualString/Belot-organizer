@@ -83,6 +83,14 @@ $orgname = $_SESSION['organizator'];
                 <div class="nav">
                     <ul class="slimmenu" id="slimmenu">
                         <li class="active"><a><?php echo $_SESSION['organizator']; ?></a></li>
+						<li><a href="teams-list">Ekipe</a></li>
+                        <li><a>Turniri</a>
+                            <ul>
+                                <li><a href="tournaments-started">U tijeku</a></li>
+                                <li><a href="tournaments-underway">Nadolazeći</a></li>
+								<li><a href="tournaments-finished">Završeni</a></li>
+                            </ul>
+                        </li>
                         <li style="float:right;"><a href="logout"><span class="fa fa-sign-out"></span> Odjava</a></li>        
                     </ul>
                 </div>
@@ -139,6 +147,8 @@ $orgname = $_SESSION['organizator'];
 											<option>16</option>
 											<option>17</option>
 											<option>18</option>
+											<option>19</option>
+											<option>20</option>
 										</select>
 									</div>
 								</div>
@@ -189,7 +199,14 @@ $orgname = $_SESSION['organizator'];
                             <h2>Vaši turniri</h2>
 										
 								<?php
+									$sql = "SELECT * FROM `Tournaments` WHERE orgName='$orgname' LIMIT 1"; 
+									$q = mysqli_query($db_conx, $sql);
+									$row_cnt = mysqli_num_rows($q);
 									
+									if ($row_cnt == 0) { echo '<h4>Nemate prijavljenih turnira.</h4>';}
+									else {
+										
+										
 										/** Pokrenuti turniri **/
 										
 										$sql = "SELECT * FROM `Tournaments` WHERE orgName='$orgname' AND full='1' AND started='1' ORDER BY date"; 
@@ -341,6 +358,7 @@ $orgname = $_SESSION['organizator'];
 												$br++;
 											
 										}
+									}	
 								
 								?>
 								

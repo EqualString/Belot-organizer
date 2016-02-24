@@ -24,8 +24,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-add-organizer:before {
-    content: "\e90e";
+.icon-victory:before {
+    content: "\e910";
+}
+.icon-team:before {
+    content: "\e911";
 }
 .icon-zel:before {
     content: "\e901";
@@ -38,6 +41,9 @@
 }
 .icon-buc:before {
     content: "\e904";
+}
+.icon-add-organizer:before {
+    content: "\e90e";
 }
 .icon-addteam:before {
     content: "\e906";
@@ -90,6 +96,7 @@
 .icon-cancel-circle:before {
     content: "\ea0d";
 }
+
 
 
 

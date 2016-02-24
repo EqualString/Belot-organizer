@@ -78,3 +78,19 @@ $("#tourn-results").click( function(){
 	var id = getParameterByName('id');
 	window.location.href = "/results.php?tournament="+id;
 });	
+
+//Zatvaranje turnira
+$("#org-finish-tourn").click( function(){ 
+	$("#some-status").html('<i class="fa fa-spinner fa-pulse timer2" style="margin-left:130px; margin-top:6px;"></i>');
+	var id = getParameterByName('tournament');
+	setTimeout(function(){
+		var ajax = ajaxObj("POST", "results.php?tournament="+id);
+				//Primanje od strane php-a
+				ajax.onreadystatechange = function() {
+					if(ajaxReturn(ajax) == true) {
+							location.reload();
+				}
+			}
+		ajax.send("FinishTournament");
+	}, 750);
+});

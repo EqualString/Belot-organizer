@@ -192,7 +192,7 @@ if (isset($_GET['id'])) {
                         <thead>
                             <tr>
                                 <th style="text-align:center;">#</th>
-                                <th>Naziv ekipe</th>
+                                <th style="text-align:center;">Naziv ekipe</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -202,7 +202,7 @@ if (isset($_GET['id'])) {
 							$teams_in = $tourn_string["teamsIn"];
 							
 							if ($teams_in == '0') { echo '<td class="booking-history-type">Nema prijavljenih ekipa.</td>
-														  <td class="booking-history-title">Nema prijavljenih ekipa.</td>';}
+														  <td class="booking-history-title" style="text-align:center;">Nema prijavljenih ekipa.</td>';}
 							else {
 							
 								$sql = "SELECT * FROM `Teams` WHERE teamID IN ($teams_in) ORDER BY teamID"; 
@@ -214,7 +214,7 @@ if (isset($_GET['id'])) {
 										echo '
 											<tr>
 												<td class="booking-history-type">'.$br.'</td>
-												<td class="booking-history-title">'.$row["teamName"].'</td>
+												<td class="booking-history-title" style="text-align:center;">'.$row["teamName"].'</td>
 											</tr>';
 											
 										$br++;

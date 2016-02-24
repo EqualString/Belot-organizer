@@ -9,7 +9,7 @@
 		exit();
 	}
 	if(isset($_SESSION['sudionik'])){
-		header("location: /participant");
+		header("location: /team");
 		exit();
 	}
 	

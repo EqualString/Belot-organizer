@@ -4,6 +4,10 @@ RewriteRule ^/*$ ./index.php
 RewriteRule ^index$ ./index.php
 RewriteRule ^team$ ./team.php
 RewriteRule ^organizer$ ./organizer.php
+RewriteRule ^teams-list$ ./php_includes/team-list.php
+RewriteRule ^tournaments-started$ ./t-list-started.php
+RewriteRule ^tournaments-underway$ ./t-list-underway.php
+RewriteRule ^tournaments-finished$ ./t-list-finished.php
 RewriteRule ^login$ ./php_includes/login.php
 RewriteRule ^logout$ ./php_includes/logout.php
 ErrorDocument 404 /php_includes/404.php

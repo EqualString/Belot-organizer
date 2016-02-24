@@ -19,6 +19,8 @@ $('.toggle').click(function(){
 	}, "slow");
 });
 
+var uri = document.referrer; //Zadnji link na koji će se vratiti poslije login-a
+
 $("#organizer-login-btn").click( function(){ 
 	var tn1 = $('#organizer-login-username').val();
 	var tn2 = $('#organizer-login-password').val();
@@ -30,7 +32,7 @@ $("#organizer-login-btn").click( function(){
 			ajax.onreadystatechange = function() {
 				if(ajaxReturn(ajax) == true) {
 					if(ajax.responseText == "3"){
-						window.location.href = "/organizer";
+						window.location.href = uri;
 					}
 					if(ajax.responseText == "2"){
 						$("#organizer-login-status").html('<p class="login-status"><i class="fa fa-exclamation-circle"></i>&nbsp; Korisnički račun nije aktiviran!</p>');
@@ -62,7 +64,7 @@ $("#team-login-btn").click( function(){
 			ajax.onreadystatechange = function() {
 				if(ajaxReturn(ajax) == true) {
 					if(ajax.responseText == "3"){
-						window.location.href = "/team";
+						window.location.href = uri;
 					}
 					if(ajax.responseText == "2"){
 						$("#team-login-status").html('<p class="login-status"><i class="fa fa-exclamation-circle"></i>&nbsp; Korisnički račun nije aktiviran!</p>');
@@ -75,7 +77,7 @@ $("#team-login-btn").click( function(){
 					}
 				}
 			}
-			ajax.send("team-login="+tn1+"&pass="+tn2);
+			ajax.send("team-login="+tn1+"&pass="+tn2+"&location="+uri);
 		}, 750);	
 	}
 	else{

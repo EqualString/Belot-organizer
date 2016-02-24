@@ -84,6 +84,14 @@ $tourn_string = mysqli_fetch_array($q);
                 <div class="nav">
                     <ul class="slimmenu" id="slimmenu">
                         <li class="active"><a><?php echo $_SESSION['sudionik']; ?></a></li>
+						<li><a href="teams-list">Ekipe</a></li>
+                        <li><a>Turniri</a>
+                            <ul>
+                                <li><a href="tournaments-started">U tijeku</a></li>
+                                <li><a href="tournaments-underway">Nadolazeći</a></li>
+								<li><a href="tournaments-finished">Završeni</a></li>
+                            </ul>
+                        </li>
                         <li style="float:right;"><a href="logout"><span class="fa fa-sign-out"></span> Odjava</a></li>        
                     </ul>
                 </div>
@@ -127,9 +135,9 @@ $tourn_string = mysqli_fetch_array($q);
 								if( $tourn_string["tournIn"] == '0' ) { echo '<h4>Nemate prijavljenih turnira.</h4>'; }
 								else {
 									
-									/** Popunjeni prijavljeni turniri **/
+									/** Popunjeni prijavljeni turniri u tijeku **/
 									
-									$sql = "SELECT * FROM `Tournaments` WHERE tournId IN (".$tourn_string["tournIn"].") AND full='1' AND started='1' ORDER BY date"; 
+									$sql = "SELECT * FROM `Tournaments` WHERE tournId IN (".$tourn_string["tournIn"].") AND full='1' AND started='1' AND finished='0' ORDER BY date"; 
 									$q = mysqli_query($db_conx, $sql);
 									$row_cnt = mysqli_num_rows($q);
 									
@@ -180,7 +188,7 @@ $tourn_string = mysqli_fetch_array($q);
 									
 									/** Popunjeni prijavljeni turniri **/
 									
-									$sql = "SELECT * FROM `Tournaments` WHERE tournId IN (".$tourn_string["tournIn"].") AND full='1' AND started='0' ORDER BY date"; 
+									$sql = "SELECT * FROM `Tournaments` WHERE tournId IN (".$tourn_string["tournIn"].") AND full='1' AND started='0' AND finished='0' ORDER BY date"; 
 									$q = mysqli_query($db_conx, $sql);
 									$row_cnt = mysqli_num_rows($q);
 									
@@ -230,7 +238,7 @@ $tourn_string = mysqli_fetch_array($q);
 									
 									/** Nepopunjeni prijavljeni turniri **/
 									
-									$sql = "SELECT * FROM `Tournaments` WHERE tournId IN (".$tourn_string["tournIn"].") AND full='0' AND started='0' ORDER BY date"; 
+									$sql = "SELECT * FROM `Tournaments` WHERE tournId IN (".$tourn_string["tournIn"].") AND full='0' AND started='0' AND finished='0' ORDER BY date"; 
 									$q = mysqli_query($db_conx, $sql);
 									$row_cnt = mysqli_num_rows($q);
 									
@@ -277,6 +285,56 @@ $tourn_string = mysqli_fetch_array($q);
 											$br++;
 										
 									}
+									
+									/** Završeni prijavljeni turniri **/
+									
+									$sql = "SELECT * FROM `Tournaments` WHERE tournId IN (".$tourn_string["tournIn"].") AND full='1' AND started='1' AND finished='1' ORDER BY date"; 
+									$q = mysqli_query($db_conx, $sql);
+									$row_cnt = mysqli_num_rows($q);
+									
+									$br = 1;
+									$done = false;
+							
+									while($row = mysqli_fetch_array($q))
+									{
+										if ($done == false) { echo '<h4>Završeni turniri</h4>'; $done = true; }
+											
+											if ( $br == 1 ) { echo '<div class="row">'; } //Prvi zapis
+											
+												echo '
+													 <div class="col-md-4">
+														<div class="booking-item booking-item-small">
+															<a href="tournament.php?id='.$row['tournId'].'">
+																<div class="row">
+																	<div class="col-xs-5">
+																		<h5 class="booking-item-title"><i class="fa fa-trophy" style="font-size:20px; margin-top:5px;"></i></br>'.$row['tournName'].'</h5>
+																	</div>
+																	<div class="col-xs-3" style="margin-top:4px;">
+																		<span class="booking-item-price-from">
+																			<i class="fa fa-male"></i> 
+																			<i class="fa fa-male"></i> 
+																			<i class="fa fa-male"></i> 
+																		</span>
+																		<span class="booking-item-price">'.$row['curTeams'].'/'.$row['maxTeams'].'</span>
+																	</div>
+																	<div class="col-xs-3">
+																		<h5 class="booking-item-title"><i class="icon icon-profile2" style="font-size:25px;"></i></br>'.$row['orgName'].'</h5>
+																	</div>
+																</div>
+															</a>	
+														</div>
+													</div>';
+											
+											if (( $br%3 == 0 )&&( $br == $row_cnt )){ echo '</div>'; } //Treći && zadnji
+											else if ( $br%3 == 0 ){//Treći zapis
+												echo '</div>';  echo '<div class="row">'; 
+											} else if ( $br == $row_cnt ){ //Zadnji zapis
+												echo '</div>'; 
+											}
+											
+											$br++;
+										
+									}
 								}
 								?>
                         </div>
@@ -286,7 +344,7 @@ $tourn_string = mysqli_fetch_array($q);
 								<?php
 										/** Slobodni turniri **/
 										
-										$sql = "SELECT * FROM `Tournaments` WHERE tournId NOT IN (".$tourn_string["tournIn"].") AND full='0' AND started='0' ORDER BY date";
+										$sql = "SELECT * FROM `Tournaments` WHERE tournId NOT IN (".$tourn_string["tournIn"].") AND full='0' AND started='0' AND finished='0' ORDER BY date";
 										$q = mysqli_query($db_conx, $sql);
 										$row_cnt = mysqli_num_rows($q);
 										

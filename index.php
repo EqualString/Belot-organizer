@@ -83,10 +83,12 @@
                 <div class="nav">
                     <ul class="slimmenu" id="slimmenu">
                         <li class="active"><a href="index">Početna</a></li>
+						<li><a href="teams-list">Ekipe</a></li>
                         <li><a>Turniri</a>
                             <ul>
-                                <li><a href="success-payment.html">U tijeku</a></li>
-                                <li><a href="user-profile.html">Nadolazeći</a></li>
+                                <li><a href="tournaments-started">U tijeku</a></li>
+                                <li><a href="tournaments-underway">Nadolazeći</a></li>
+								<li><a href="tournaments-finished">Završeni</a></li>
                             </ul>
                         </li>
                         <li style="float:right;"><a><span class="fa fa-sign-in"></span> Prijava</a>
